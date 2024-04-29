@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	<script type="module" src="./index.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="contacts.css">
+	<title>Контакти</title>
+</head>
+<body>
+	<header id="main-header">
+		<div id="head-wrap"> <img id="logo" src="https://res.cloudinary.com/traveltripperweb/image/upload/c_fit,f_auto,h_1200,q_auto,w_1200/v1590593285/goiu0axb5wllexvk6x2t.jpg" width="70px" height="70px"><h1>Sunset Dream Hotel</h1></div>
+
+		<nav id="main-nav">
+			<ul>
+				<li> <a href="index.html">За нас</a> </li>
+				<li> <a href="prices.html">Цени</a> </li>
+				<li> <a href="reservation_form.html">Резервирай</a> </li>
+				<li> <a href="gallery.html">Галерия</a> </li>
+				<li> <a href="contacts.html">Контакти</a> </li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div><h2 id="heading">Контакти</h2></div>
+
+		<hr>
+
+		<div id="container">
+    	<div id="text">
+    		<section>
+				<article>
+					<div>
+						<h3>Отдел "Маркетинг и резервации"</h3>
+						<p>Пон. - Пет. 09:00 ч. - 18:30 ч.</p>
+						<p>Сб.- Нд.     09:00 ч. - 17:30 ч. </p>
+
+						<br>
+
+						<h3>Рецепция:</h3>
+						<p>	Пон.-Нд.    00:00 ч.- 24:00 ч.</p>
+
+						<br>
+
+						<h3>Телефони за връзка:</h3> <br>
+						<div id="phones">
+							<div id="marketing">
+								<h4>Отдел маркетинг:</h4>
+								<p>+359(0) 337 62 782;</p>
+								<p>+359(0) 337 62 783;</p>
+								<p>+359(0) 337 62 688;</p>
+								<p>+359(0) 337 62 768;</p>
+							</div>
+
+							<div id="reception">
+								<h4>Рецепция:</h4>
+								<p>+359(0) 337 62 781;</p> <br>
+
+								<h4>Факс:</h4>
+								<p>+359(0) 337 62 784;</p>
+							</div>
+						</div>
+					</div>
+				</article>
+			</section>
+    	</div>
+    	
+    	<div id="map"></div>
+    </div>
+
+    
+
+	</main>
+
+	<footer id="main-footer">
+		<div class="footer-container">
+			<div class="row">
+				<div class="footer-col">
+					<h4>Навигация</h4>
+					<ul>
+						<li><a href="index.html">За нас</a></li>
+						<li><a href="prices.html">Цени</a></li>
+						<li><a href="reservation_form.html">Резервирай</a></li>
+						<li><a href="gallery.html">Галерия</a></li>
+						<li><a href="contacts.html">Контакти</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h4>За резервация</h4>
+					<p>За резервация, моля попълнете</p>
+					<p>формата във раздел "Резервирай"</p>
+				</div>
+
+				<div class="footer-col">
+					<h4>Адрес</h4>
+					<p>България</p>
+					<p>4000 Пловдив</p>
+					<p>Хотел Sunset Dream</p>
+					<p>e-mail: synsethotel@gmail.com</p>
+				</div>
+
+				<div class="footer-col">
+					<h4>Контакти</h4>
+					<p>+ 359 554 222 96</p>
+					<p>Fax: + 359 554 223 76</p>
+					<p>Говорим български,</p>
+					<p>английски и руски.</p>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer ></script>
+
+    <script type="text/javascript">
+
+
+    	function initMap() {
+		const plovdiv = { lat: 42.136097, lng: 24.742168 };
+		const map = new google.maps.Map(document.getElementById("map"), {
+		    zoom: 10,
+		    center: plovdiv,
+		  });
+		
+		  const marker = new google.maps.Marker({
+		    position: plovdiv,
+		    map: map,
+		  });
+}
+
+window.initMap = initMap;
+    </script>
+	
+</body>
+</html>

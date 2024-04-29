@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="reservation_form.css">
+	<title>Резервирай</title>
+</head>
+<body>
+	<header id="main-header">
+		<div id="head-wrap"> <img id="logo" src="https://res.cloudinary.com/traveltripperweb/image/upload/c_fit,f_auto,h_1200,q_auto,w_1200/v1590593285/goiu0axb5wllexvk6x2t.jpg" width="70px" height="70px"><h1>Sunset Dream Hotel</h1></div>
+
+		<nav id="main-nav">
+			<ul>
+				<li> <a href="index.html">За нас</a> </li>
+				<li> <a href="prices.html">Цени</a> </li>
+				<li> <a href="reservation_form.html">Резервирай</a> </li>
+				<li> <a href="gallery.html">Галерия</a> </li>
+				<li> <a href="contacts.html">Контакти</a> </li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id="container">
+
+		<h2>За резервация, моля попълнете формата по-долу:</h2>
+
+		<hr>
+
+		<br>
+
+		<form>
+			<label for="fname">Име:</label> <br>
+			<input type="text" name="fname" id="fname"> <br>
+			<label for="sname">Фамилия:</label> <br>
+			<input type="text" name="sname" id="sname"> <br>
+			<label for="email">E-mail:</label> <br>
+			<input type="text" name="email" id="email"> <br>
+			<label for="phone">Телефонен номер:</label> <br>
+			<input type="text" name="phone" id="phone"> <br>
+
+
+			<label for="adults">Брой възрастни:</label>
+		    <select name="adults" id="adults" required>
+		    <option value="">Изберете</option>
+		      <option value="1">1</option>
+		      <option value="2">2</option>
+		      <option value="3">3</option>
+		      <option value="4">4</option>
+		    </select>
+
+		    <br>
+
+		    <label for="kids">Брой деца:</label>
+		    <select name="kids" id="kids" required>
+		    	<option value="">Изберете</option>
+		    	<option value="0">0</option>
+		    	<option value="1">1</option>
+			    <option value="2">2</option>
+			    <option value="3">3</option>
+			    <option value="4">4</option>
+		    </select> <br>
+
+		    <label>Тип крило от комплекса:</label> <br>
+		    <input type="radio" name="room" id="standart">
+		    <label for="standart">Стандартно крило</label> <br>
+		    <input type="radio" name="room" id="delux">
+		    <label for="delux">Делукс крило</label> <br>
+
+		    <label>Тип стая:</label>
+		    <select name="rooms" id="rooms" required>
+		    	<option value="">Изберете</option>
+		    	<option value="single-room">Единична стая</option>
+		    	<option value="double-room">Двойна стая</option>
+		    	<option value="apartament">Апартамент</option>
+		    	<option value="studio">Студио</option>
+		    </select> <br>
+
+		    <label for="start-date">Настаняване:</label>
+		    <input type="date" name="start-date" min="2023-01-15" max="2023-12-31"> <br>
+
+		    <label for="end-date">Напускане:</label>
+		    <input type="date" name="end-date" min="2023-01-15" max="2023-12-31"> <br>
+
+		    <label for="comments">Остави коментар:</label> <br>
+			<textarea id="comments" name="comments" rows="4" cols="50"></textarea> <br> <br>
+
+		    <button onclick="validateForm()">Резервирай</button>
+
+		</form>
+	</div>
+
+	<footer id="main-footer">
+		<div class="footer-container">
+			<div class="row">
+				<div class="footer-col">
+					<h4>Навигация</h4>
+					<ul>
+						<li><a href="index.html">За нас</a></li>
+						<li><a href="prices.html">Цени</a></li>
+						<li><a href="reservation_form.html">Резервирай</a></li>
+						<li><a href="gallery.html">Галерия</a></li>
+						<li><a href="contacts.html">Контакти</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h4>За резервация</h4>
+					<p>За резервация, моля попълнете</p>
+					<p>формата във раздел "Резервирай"</p>
+				</div>
+
+				<div class="footer-col">
+					<h4>Адрес</h4>
+					<p>България</p>
+					<p>4000 Пловдив</p>
+					<p>Хотел Sunset Dream</p>
+					<p>e-mail: synsethotel@gmail.com</p>
+				</div>
+
+				<div class="footer-col">
+					<h4>Контакти</h4>
+					<p>+ 359 554 222 96</p>
+					<p>Fax: + 359 554 223 76</p>
+					<p>Говорим български,</p>
+					<p>английски и руски.</p>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+
+
+	<script type="text/javascript">
+			function validateForm() {
+				var fname = document.getElementById("fname").value;
+				var sname = document.getElementById("sname").value;
+				var email = document.getElementById("email").value;
+				var phone = document.getElementById("phone").value;
+
+				if (fname == "") {
+					alert("Моля, въведете име!!!");
+				}
+
+				if (sname == "") {
+					alert("Моля, въведете фамилия!!!")
+				}
+				
+				if (email == "") {
+					alert("Моля, въведете имейл!!!")
+				}
+				
+				if (phone == "") {
+					alert("Моля, въведете телефонен номер!")
+				}
+
+				if (phone.length > 1 && phone.length < 10) {
+					alert("Въведения телефонен номер е по-малко от 10 цифри!")
+				}
+
+				if (phone.length > 10) {
+					alert("Въведения телефонен номер е повече от 10 цифри!")
+				}
+
+				if(document.getElementByName("room").checked == false) {   
+				         document.write("Изберете тип стая!");   
+				}
+		}
+	</script>
+
+</body>
+</html>
